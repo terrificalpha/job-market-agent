@@ -1,0 +1,22 @@
+[
+ {"id": "J001", "title": "AI Engineer", "company": "Sample Co A", "location": "Hyderabad",
+  "description": "Build LLM applications using Python, FastAPI and RAG. Experience with Docker, AWS and CI/CD required. Knowledge of vector database and prompt engineering preferred."},
+ {"id": "J002", "title": "Machine Learning Engineer", "company": "Sample Co B", "location": "Bengaluru",
+  "description": "Train and deploy machine learning models in Python with scikit-learn and PyTorch. Strong SQL, Docker, MLOps and Git. Airflow a plus."},
+ {"id": "J003", "title": "Junior AI Engineer", "company": "Sample Co C", "location": "Hyderabad",
+  "description": "Work on LLM and RAG pipelines with LangChain. Python, Git, FastAPI and basic Docker. Familiarity with Azure is a plus."},
+ {"id": "J004", "title": "Data Scientist", "company": "Sample Co D", "location": "Pune",
+  "description": "Statistics, machine learning, Python, SQL, pandas and scikit-learn. Power BI or Tableau for reporting. Spark is a plus."},
+ {"id": "J005", "title": "Generative AI Developer", "company": "Sample Co E", "location": "Remote",
+  "description": "Develop LLM agents with LangGraph and prompt engineering. Python, FastAPI, Docker, CI/CD and AWS. Evaluate RAG quality."},
+ {"id": "J006", "title": "Data Analyst", "company": "Sample Co F", "location": "Hyderabad",
+  "description": "SQL, Power BI, Tableau, Python and pandas for dashboards and reporting. Statistics fundamentals."},
+ {"id": "J007", "title": "ML Engineer", "company": "Sample Co G", "location": "Bengaluru",
+  "description": "Deep learning with PyTorch and TensorFlow, computer vision and NLP. Python, Docker, Kubernetes, GCP and MLOps."},
+ {"id": "J008", "title": "AI Application Developer", "company": "Sample Co H", "location": "Hyderabad",
+  "description": "Ship LLM features with Python, FastAPI and RAG over company documents. Docker, Git, CI/CD and cloud deployment on Azure."},
+ {"id": "J009", "title": "Junior Data Scientist", "company": "Sample Co I", "location": "Remote",
+  "description": "Python, SQL, pandas, numpy, machine learning and statistics. Git. Basic AWS knowledge helpful."},
+ {"id": "J010", "title": "AI Engineer", "company": "Sample Co J", "location": "Pune",
+  "description": "Design RAG systems and LLM agents. Python, LangChain, vector database, Docker, Kubernetes, CI/CD and AWS."}
+]

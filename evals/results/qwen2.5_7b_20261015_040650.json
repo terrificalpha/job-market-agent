@@ -1,0 +1,368 @@
+[
+  {
+    "id": "count_ai_hyd",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 12.0,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "trace": [
+      {
+        "tool": "search_jobs",
+        "input": {
+          "query": "AI Engineer",
+          "location": "Hyderabad"
+        },
+        "output": "{\"count\": 2, \"jobs\": [{\"id\": \"J001\", \"title\": \"AI Engineer\", \"company\": \"Sample Co A\", \"location\": \"Hyderabad\"}, {\"id\": \"J003\", \"title\": \"Junior AI Engineer\", \"company\": \"Sample Co C\", \"location\": \"Hyderabad\"}]}",
+        "error": false
+      }
+    ],
+    "answer": "Found 2 job(s).\nJOB_ID - Title - Company - Location\nJ001 - AI Engineer - Sample Co A - Hyderabad\nJ003 - Junior AI Engineer - Sample Co C - Hyderabad\n\nThere are 2 AI Engineer jobs listed in Hyderabad."
+  },
+  {
+    "id": "remote_ds",
+    "passed": true,
+    "fails": [],
+    "steps": 6,
+    "elapsed_s": 39.9,
+    "tool_calls": [
+      "search_jobs",
+      "extract_skills",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "trace": [
+      {
+        "tool": "search_jobs",
+        "input": {
+          "query": "Data Scientist",
+          "location": "Remote"
+        },
+        "output": "{\"count\": 1, \"jobs\": [{\"id\": \"J009\", \"title\": \"Junior Data Scientist\", \"company\": \"Sample Co I\", \"location\": \"Remote\"}]}",
+        "error": false
+      },
+      {
+        "tool": "extract_skills",
+        "input": {
+          "job_id": "J009"
+        },
+        "output": "{\"job_id\": \"J009\", \"skills\": [\"python\", \"sql\", \"pandas\", \"numpy\", \"aws\", \"git\", \"machine learning\", \"statistics\"]}",
+        "error": false
+      },
+      {
+        "tool": "compare_to_resume",
+        "input": {
+          "job_ids": [
+            "J009"
+          ]
+        },
+        "output": "{\"jobs_analyzed\": 1, \"have\": [{\"skill\": \"python\", \"jobs\": 1}, {\"skill\": \"sql\", \"jobs\": 1}, {\"skill\": \"pandas\", \"jobs\": 1}, {\"skill\": \"numpy\", \"jobs\": 1}, {\"skill\": \"git\", \"jobs\": 1}, {\"skill\": \"machine learning\", \"jobs\": 1}, {\"skill\": \"statistics\", \"jobs\": 1}], \"gaps\": [{\"skill\": \"aws\", \"jobs\": 1}]}",
+        "error": false
+      },
+      {
+        "tool": "save_report",
+        "input": {
+          "content": "# Skills Analysis for Remote Data Scientist Job\n\n## Skills Present\n- Python\n- SQL\n- Pandas\n- NumPy\n- Git\n- Machine Learning\n- Statistics\n\n## Skills Missing\n- AWS",
+          "filename": "report.md"
+        },
+        "output": "{\"saved\": \"reports/report.md\"}",
+        "error": false
+      }
+    ],
+    "answer": "Found 1 job(s). JOB_ID - Title - Company - Location J009 - Junior Data Scientist - Sample Co I - Remote\n\nThe analysis of the skills required for the job shows that you already have Python, SQL, Pandas, NumPy, Git, Machine Learning, and Statistics. However, there is a gap in your skills related to AWS. A report summarizing this analysis has been saved to `reports/report.md`."
+  },
+  {
+    "id": "find_data_analyst",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 12.4,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "trace": [
+      {
+        "tool": "search_jobs",
+        "input": {
+          "query": "Data Analyst",
+          "location": "Hyderabad"
+        },
+        "output": "{\"count\": 1, \"jobs\": [{\"id\": \"J006\", \"title\": \"Data Analyst\", \"company\": \"Sample Co F\", \"location\": \"Hyderabad\"}]}",
+        "error": false
+      }
+    ],
+    "answer": "Found 1 job(s). JOB_ID - Title - Company - Location J006 - Data Analyst - Sample Co F - Hyderabad\n\nThis search returned one job listing for a Data Analyst position at Sample Co F in Hyderabad. The job may present specific skill requirements which we can compare against your resume to identify potential gaps and overlaps."
+  },
+  {
+    "id": "skills_j001",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 8.9,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "trace": [
+      {
+        "tool": "extract_skills",
+        "input": {
+          "job_id": "J001"
+        },
+        "output": "{\"job_id\": \"J001\", \"skills\": [\"python\", \"fastapi\", \"docker\", \"aws\", \"ci/cd\", \"rag\", \"llm\", \"vector database\", \"prompt engineering\"]}",
+        "error": false
+      }
+    ],
+    "answer": "The job J001 requires the following skills: python, fastapi, docker, aws, ci/cd, rag, llm, vector database, prompt engineering."
+  },
+  {
+    "id": "skills_j007",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 9.2,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "trace": [
+      {
+        "tool": "extract_skills",
+        "input": {
+          "job_id": "J007"
+        },
+        "output": "{\"job_id\": \"J007\", \"skills\": [\"python\", \"pytorch\", \"tensorflow\", \"docker\", \"kubernetes\", \"gcp\", \"mlops\", \"deep learning\", \"nlp\", \"computer vision\"]}",
+        "error": false
+      }
+    ],
+    "answer": "The job J007 requires the following skills: python, pytorch, tensorflow, docker, kubernetes, gcp, mlops, deep learning, nlp, and computer vision."
+  },
+  {
+    "id": "compare_two",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 16.6,
+    "tool_calls": [
+      "compare_to_resume"
+    ],
+    "trace": [
+      {
+        "tool": "compare_to_resume",
+        "input": {
+          "job_ids": [
+            "J002",
+            "J007"
+          ]
+        },
+        "output": "{\"jobs_analyzed\": 2, \"have\": [{\"skill\": \"python\", \"jobs\": 2}, {\"skill\": \"pytorch\", \"jobs\": 2}, {\"skill\": \"sql\", \"jobs\": 1}, {\"skill\": \"scikit-learn\", \"jobs\": 1}, {\"skill\": \"git\", \"jobs\": 1}, {\"skill\": \"machine learning\", \"jobs\": 1}, {\"skill\": \"tensorflow\", \"jobs\": 1}, {\"skill\": \"deep learning\", \"job",
+        "error": false
+      }
+    ],
+    "answer": "You have the following skills that are required by both jobs J002 and J007: Python, PyTorch, SQL, scikit-learn, Git, Machine Learning, TensorFlow, Deep Learning, and Computer Vision. However, there are skills that the jobs are looking for which you currently lack: Docker, MLOps, Airflow, Kubernetes, GCP, and NLP."
+  },
+  {
+    "id": "gaps_pune_ai",
+    "passed": true,
+    "fails": [],
+    "steps": 7,
+    "elapsed_s": 37.8,
+    "tool_calls": [
+      "search_jobs",
+      "extract_skills",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "trace": [
+      {
+        "tool": "search_jobs",
+        "input": {
+          "query": "AI Engineer",
+          "location": "Pune"
+        },
+        "output": "{\"count\": 1, \"jobs\": [{\"id\": \"J010\", \"title\": \"AI Engineer\", \"company\": \"Sample Co J\", \"location\": \"Pune\"}]}",
+        "error": false
+      },
+      {
+        "tool": "extract_skills",
+        "input": {
+          "job_id": "J010"
+        },
+        "output": "{\"job_id\": \"J010\", \"skills\": [\"python\", \"docker\", \"kubernetes\", \"aws\", \"ci/cd\", \"rag\", \"llm\", \"langchain\", \"vector database\"]}",
+        "error": false
+      },
+      {
+        "tool": "compare_to_resume",
+        "input": {
+          "job_ids": [
+            "J010"
+          ]
+        },
+        "output": "{\"jobs_analyzed\": 1, \"have\": [{\"skill\": \"python\", \"jobs\": 1}, {\"skill\": \"rag\", \"jobs\": 1}, {\"skill\": \"llm\", \"jobs\": 1}], \"gaps\": [{\"skill\": \"docker\", \"jobs\": 1}, {\"skill\": \"kubernetes\", \"jobs\": 1}, {\"skill\": \"aws\", \"jobs\": 1}, {\"skill\": \"ci/cd\", \"jobs\": 1}, {\"skill\": \"langchain\", \"jobs\": 1}, {\"skill",
+        "error": false
+      },
+      {
+        "tool": "save_report",
+        "input": {
+          "filename": "report.md",
+          "content": "# Skill Analysis for AI Engineer Position in Pune\n\n## Jobs Analyzed\n- J010 - AI Engineer - Sample Co J - Pune\n\n## Skills You Have\n- python\n- rag\n- llm\n\n## Skills You Lack\n- docker\n- kubernetes\n- aws\n- ci/cd\n- langchain\n- vector database"
+        },
+        "output": "{\"saved\": \"reports/report.md\"}",
+        "error": false
+      }
+    ],
+    "answer": "Found 1 job(s).\nJOB_ID - Title - Company - Location\n- J010 - AI Engineer - Sample Co J - Pune\n\nYour analysis shows that you have skills in Python, RAG, and LLm. However, you may want to acquire skills in Docker, Kubernetes, AWS, CI/CD, Langchain, and Vector database as these are required for the AI Engineer position in Pune."
+  },
+  {
+    "id": "pipeline_hyd",
+    "passed": true,
+    "fails": [],
+    "steps": 4,
+    "elapsed_s": 33.4,
+    "tool_calls": [
+      "search_jobs",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "trace": [
+      {
+        "tool": "search_jobs",
+        "input": {
+          "query": "AI Engineer",
+          "location": "Hyderabad"
+        },
+        "output": "{\"count\": 2, \"jobs\": [{\"id\": \"J001\", \"title\": \"AI Engineer\", \"company\": \"Sample Co A\", \"location\": \"Hyderabad\"}, {\"id\": \"J003\", \"title\": \"Junior AI Engineer\", \"company\": \"Sample Co C\", \"location\": \"Hyderabad\"}]}",
+        "error": false
+      },
+      {
+        "tool": "compare_to_resume",
+        "input": {
+          "job_ids": [
+            "J001",
+            "J003"
+          ]
+        },
+        "output": "{\"jobs_analyzed\": 2, \"have\": [{\"skill\": \"python\", \"jobs\": 2}, {\"skill\": \"rag\", \"jobs\": 2}, {\"skill\": \"llm\", \"jobs\": 2}, {\"skill\": \"git\", \"jobs\": 1}], \"gaps\": [{\"skill\": \"fastapi\", \"jobs\": 2}, {\"skill\": \"docker\", \"jobs\": 2}, {\"skill\": \"aws\", \"jobs\": 1}, {\"skill\": \"ci/cd\", \"jobs\": 1}, {\"skill\": \"vecto",
+        "error": false
+      },
+      {
+        "tool": "save_report",
+        "input": {
+          "filename": "hyderabad_ai_gap.md",
+          "content": "# AI Engineer Skills Gap in Hyderabad\n\n## Skills You Have\n- Python\n- RAG\n- LLM\n- Git\n\n## Skills You Lack\n- FastAPI\n- Docker\n- AWS\n- CI/CD\n- Vector database\n- Prompt engineering\n- Azure\n- Langchain"
+        },
+        "output": "{\"saved\": \"reports/hyderabad_ai_gap.md\"}",
+        "error": false
+      }
+    ],
+    "answer": "Found 2 job(s).\nJOB_ID - Title - Company - Location\nJ001 - AI Engineer - Sample Co A - Hyderabad\nJ003 - Junior AI Engineer - Sample Co C - Hyderabad\n\nThe report highlights that you have skills in Python, RAG, LLM, and Git. However, there are gaps in your skill set for FastAPI, Docker, AWS, CI/CD, vector database, prompt engineering, Azure, and Langchain. These are the skills most frequently requested in the AI Engineer roles in Hyderabad."
+  },
+  {
+    "id": "pipeline_ml_blr",
+    "passed": false,
+    "fails": [
+      "answer missing 'docker'"
+    ],
+    "steps": 5,
+    "elapsed_s": 33.3,
+    "tool_calls": [
+      "search_jobs",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "trace": [
+      {
+        "tool": "search_jobs",
+        "input": {
+          "query": "Machine Learning Engineer",
+          "location": "Bengaluru"
+        },
+        "output": "{\"count\": 1, \"jobs\": [{\"id\": \"J002\", \"title\": \"Machine Learning Engineer\", \"company\": \"Sample Co B\", \"location\": \"Bengaluru\"}]}",
+        "error": false
+      },
+      {
+        "tool": "compare_to_resume",
+        "input": {
+          "job_ids": [
+            "J002"
+          ]
+        },
+        "output": "{\"jobs_analyzed\": 1, \"have\": [{\"skill\": \"python\", \"jobs\": 1}, {\"skill\": \"sql\", \"jobs\": 1}, {\"skill\": \"scikit-learn\", \"jobs\": 1}, {\"skill\": \"pytorch\", \"jobs\": 1}, {\"skill\": \"git\", \"jobs\": 1}, {\"skill\": \"machine learning\", \"jobs\": 1}], \"gaps\": [{\"skill\": \"docker\", \"jobs\": 1}, {\"skill\": \"mlops\", \"jobs\"",
+        "error": false
+      },
+      {
+        "tool": "save_report",
+        "input": {
+          "filename": "ml_blr_gap.md",
+          "content": "# Skill Gaps for Machine Learning Engineer in Bengaluru\n\n## Jobs Analyzed\n- J002 - Machine Learning Engineer - Sample Co B - Bengaluru\n\n## Skills You Have\n- python\n- sql\n- scikit-learn\n- pytorch\n- git\n- machine learning\n\n## Skills You Lack\n- docker\n- mlops\n- airflow"
+        },
+        "output": "{\"saved\": \"reports/ml_blr_gap.md\"}",
+        "error": false
+      }
+    ],
+    "answer": "Found 1 job(s).\nJOB_ID - Title - Company - Location\nJ002 - Machine Learning Engineer - Sample Co B - Bengaluru\n\nThe report has been saved as `ml_blr_gap.md`. It details the skills you have and those you lack for the Machine Learning Engineer position in Bengaluru."
+  },
+  {
+    "id": "no_results",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 7.3,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "trace": [
+      {
+        "tool": "search_jobs",
+        "input": {
+          "location": "Hyderabad",
+          "query": "Quantum Engineer"
+        },
+        "output": "{\"count\": 0, \"jobs\": []}",
+        "error": false
+      }
+    ],
+    "answer": "Found 0 job(s).\n\nThere are currently no Quantum Engineer jobs listed in Hyderabad."
+  },
+  {
+    "id": "unknown_job",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 7.2,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "trace": [
+      {
+        "tool": "extract_skills",
+        "input": {
+          "job_id": "J999"
+        },
+        "output": "Tool error: job_id 'J999' was not found (job does not exist). Do not retry it; tell the user it was not found.",
+        "error": true
+      }
+    ],
+    "answer": "Job ID J999 was not found. Please provide a valid job ID."
+  },
+  {
+    "id": "no_tools_weather",
+    "passed": true,
+    "fails": [],
+    "steps": 1,
+    "elapsed_s": 6.0,
+    "tool_calls": [],
+    "trace": [],
+    "answer": "I'm sorry, but I can't provide weather information as my capabilities are focused on job market analysis. Please check a weather forecasting website or app for today's weather in Hyderabad."
+  },
+  {
+    "id": "no_tools_chat",
+    "passed": true,
+    "fails": [],
+    "steps": 1,
+    "elapsed_s": 4.6,
+    "tool_calls": [],
+    "trace": [],
+    "answer": "RAG stands for Retrieval-Augmented Generation, a technique where models use external information sources to enhance their responses."
+  }
+]

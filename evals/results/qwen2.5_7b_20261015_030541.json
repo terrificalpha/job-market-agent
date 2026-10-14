@@ -1,0 +1,159 @@
+[
+  {
+    "id": "count_ai_hyd",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 11.2,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": "There are 2 AI Engineer jobs listed in Hyderabad. The job titles and IDs are as follows:\n- J001: AI Engineer at Sample Co A\n- J003: Junior AI Engineer at Sample Co C"
+  },
+  {
+    "id": "remote_ds",
+    "passed": false,
+    "fails": [
+      "answer has none of ['J009', 'Junior Data Scientist']..."
+    ],
+    "steps": 4,
+    "elapsed_s": 25.3,
+    "tool_calls": [
+      "search_jobs",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "answer": "A report summarizing the skills required for the remote Data Scientist job has been generated. You have the following skills: Python, SQL, Pandas, NumPy, Git, Machine Learning, and Statistics. However, the job listing also requires AWS, which you currently lack. The report has been saved as `job_skills_report.md`."
+  },
+  {
+    "id": "find_data_analyst",
+    "passed": false,
+    "fails": [
+      "answer has none of ['J006', 'Sample Co F']..."
+    ],
+    "steps": 4,
+    "elapsed_s": 26.5,
+    "tool_calls": [
+      "search_jobs",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "answer": "The search for Data Analyst jobs in Hyderabad returned one job listing. The report compares the required skills for this job with your resume and finds that you have all the necessary skills: Python, SQL, Pandas, Statistics, Power BI, and Tableau. There are no gaps in the required skills based on the job listing. A markdown report summarizing this has been saved as `data_analyst_job_skills.md`."
+  },
+  {
+    "id": "skills_j001",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 9.2,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "answer": "The job J001 requires the following skills: python, fastapi, docker, aws, ci/cd, rag, llm, vector database, and prompt engineering."
+  },
+  {
+    "id": "skills_j007",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 9.3,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "answer": "The job J007 requires the following skills: python, pytorch, tensorflow, docker, kubernetes, gcp, mlops, deep learning, nlp, and computer vision."
+  },
+  {
+    "id": "compare_two",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 17.3,
+    "tool_calls": [
+      "compare_to_resume"
+    ],
+    "answer": "Based on the comparison, you have the following skills that are required for the jobs J002 and J007: Python, PyTorch, SQL, scikit-learn, Git, Machine Learning, TensorFlow, Deep Learning, and Computer Vision. However, there are gaps in your skill set that the jobs are looking for, including Docker, MLOps, Airflow, Kubernetes, GCP, and NLP."
+  },
+  {
+    "id": "gaps_pune_ai",
+    "passed": true,
+    "fails": [],
+    "steps": 4,
+    "elapsed_s": 26.7,
+    "tool_calls": [
+      "search_jobs",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "answer": "Based on the job analysis for an AI Engineer position in Pune, you have the skills in Python, RAG, and LLM. However, there are gaps in skills such as Docker, Kubernetes, AWS, CI/CD, Langchain, and Vector database. A report summarizing these findings has been saved as `job_skills_report.md`."
+  },
+  {
+    "id": "pipeline_hyd",
+    "passed": true,
+    "fails": [],
+    "steps": 4,
+    "elapsed_s": 31.6,
+    "tool_calls": [
+      "search_jobs",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "answer": "The search for \"AI Engineer\" roles in Hyderabad yielded 2 job listings. The skills most frequently required include Python, RAG, LLM, and Git. However, the gaps in skills that the job postings are looking for include FastAPI, Docker, AWS, CI/CD, vector database, prompt engineering, Azure, and Langchain. A report summarizing these findings has been saved as `hyderabad_ai_gap.md`."
+  },
+  {
+    "id": "pipeline_ml_blr",
+    "passed": true,
+    "fails": [],
+    "steps": 4,
+    "elapsed_s": 30.9,
+    "tool_calls": [
+      "search_jobs",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "answer": "The search for \"Machine Learning Engineer\" jobs in Bengaluru returned one job listing. The analysis of this job compared to your resume identified the following skills you already have: Python, SQL, scikit-learn, PyTorch, Git, and Machine Learning. However, the job also requires skills that you currently lack, including Docker, MLOps, and Airflow. A report summarizing this analysis has been saved as `ml_blr_gap.md`."
+  },
+  {
+    "id": "no_results",
+    "passed": true,
+    "fails": [],
+    "steps": 6,
+    "elapsed_s": 26.1,
+    "tool_calls": [
+      "search_jobs",
+      "search_jobs",
+      "search_jobs",
+      "search_jobs",
+      "search_jobs"
+    ],
+    "answer": "There are currently no job listings for Quantum Engineer positions available. Given the lack of job listings, I cannot proceed with comparing the required skills to your resume or generating a report. \n\nIf you have specific skills or a resume that you would like to compare, please provide that information, and I can assist you further."
+  },
+  {
+    "id": "unknown_job",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 9.1,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "answer": "It seems there was an error because the job ID \"J999\" is unknown. Could you please provide a valid job ID or specify the job title and location so I can search for it?"
+  },
+  {
+    "id": "no_tools_weather",
+    "passed": true,
+    "fails": [],
+    "steps": 1,
+    "elapsed_s": 6.2,
+    "tool_calls": [],
+    "answer": "The weather information request seems to be out of the scope of the provided tools, as they are specifically for job market analysis. Could you please provide more details related to job listings or skills assessment?"
+  },
+  {
+    "id": "no_tools_chat",
+    "passed": true,
+    "fails": [],
+    "steps": 1,
+    "elapsed_s": 4.7,
+    "tool_calls": [],
+    "answer": "RAG stands for Retrieval-Augmented Generation, a technique where models use external information sources to enhance their responses."
+  }
+]

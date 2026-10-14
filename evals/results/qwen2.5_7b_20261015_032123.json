@@ -1,0 +1,158 @@
+[
+  {
+    "id": "count_ai_hyd",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 27.4,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": "There are 2 AI Engineer jobs in Hyderabad. The job IDs and titles are as follows:\n- J001 - AI Engineer - Sample Co A - Hyderabad\n- J003 - Junior AI Engineer - Sample Co C - Hyderabad"
+  },
+  {
+    "id": "remote_ds",
+    "passed": false,
+    "fails": [
+      "answer has none of ['J009', 'Junior Data Scientist']..."
+    ],
+    "steps": 2,
+    "elapsed_s": 7.9,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": ""
+  },
+  {
+    "id": "find_data_analyst",
+    "passed": false,
+    "fails": [
+      "answer has none of ['J006', 'Sample Co F']..."
+    ],
+    "steps": 2,
+    "elapsed_s": 8.0,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": ""
+  },
+  {
+    "id": "skills_j001",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 9.0,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "answer": "The job J001 requires the following skills: python, fastapi, docker, aws, ci/cd, rag, llm, vector database, prompt engineering."
+  },
+  {
+    "id": "skills_j007",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 9.4,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "answer": "The job J007 requires the following skills: python, pytorch, tensorflow, docker, kubernetes, gcp, mlops, deep learning, nlp, and computer vision."
+  },
+  {
+    "id": "compare_two",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 17.5,
+    "tool_calls": [
+      "compare_to_resume"
+    ],
+    "answer": "Based on the comparison, you have the following skills that the jobs J002 and J007 are looking for: Python, PyTorch, SQL, scikit-learn, Git, Machine Learning, TensorFlow, Deep Learning, and Computer Vision.\n\nHowever, there are skills that the jobs are asking for but you currently lack: Docker, MLOps, Airflow, Kubernetes, GCP, and NLP."
+  },
+  {
+    "id": "gaps_pune_ai",
+    "passed": false,
+    "fails": [
+      "expected tool order ['search_jobs', 'compare_to_resume'], got ['search_jobs']",
+      "answer missing 'kubernetes'"
+    ],
+    "steps": 2,
+    "elapsed_s": 8.2,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": ""
+  },
+  {
+    "id": "pipeline_hyd",
+    "passed": false,
+    "fails": [
+      "expected tool order ['search_jobs', 'compare_to_resume', 'save_report'], got ['search_jobs']",
+      "answer missing 'docker'",
+      "report hyderabad_ai_gap.md was not saved"
+    ],
+    "steps": 2,
+    "elapsed_s": 9.3,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": ""
+  },
+  {
+    "id": "pipeline_ml_blr",
+    "passed": false,
+    "fails": [
+      "expected tool order ['search_jobs', 'compare_to_resume', 'save_report'], got ['search_jobs']",
+      "answer missing 'docker'",
+      "report ml_blr_gap.md was not saved"
+    ],
+    "steps": 2,
+    "elapsed_s": 8.7,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": ""
+  },
+  {
+    "id": "no_results",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 6.9,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": "No Quantum Engineer jobs were found in Hyderabad."
+  },
+  {
+    "id": "unknown_job",
+    "passed": false,
+    "fails": [
+      "answer has none of ['not found', 'unknown', \"doesn't exist\", 'does not exist']..."
+    ],
+    "steps": 2,
+    "elapsed_s": 8.2,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "answer": "The job ID J999 is not recognized. Please provide a valid job ID or search for jobs first."
+  },
+  {
+    "id": "no_tools_weather",
+    "passed": true,
+    "fails": [],
+    "steps": 1,
+    "elapsed_s": 5.7,
+    "tool_calls": [],
+    "answer": "The weather information request seems to be out of scope for the job market analysis tools provided. Could you please provide more details related to job listings or skills assessment?"
+  },
+  {
+    "id": "no_tools_chat",
+    "passed": true,
+    "fails": [],
+    "steps": 1,
+    "elapsed_s": 4.6,
+    "tool_calls": [],
+    "answer": "RAG stands for Retrieval-Augmented Generation, a technique where models use external information sources to enhance their responses."
+  }
+]

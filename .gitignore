@@ -1,0 +1,7 @@
+.env
+logs/
+reports/
+__pycache__/
+.pytest_cache/
+venv/
+evals/results/

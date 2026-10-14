@@ -1,0 +1,43 @@
+[
+  {
+    "id": "count_ai_hyd",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 27.0,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": "There are 2 AI Engineer jobs listed in Hyderabad. The job titles and IDs are as follows:\n- J001: AI Engineer at Sample Co A\n- J003: Junior AI Engineer at Sample Co C"
+  },
+  {
+    "id": "remote_ds",
+    "passed": false,
+    "fails": [
+      "answer has none of ['J009', 'Junior Data Scientist']..."
+    ],
+    "steps": 4,
+    "elapsed_s": 25.4,
+    "tool_calls": [
+      "search_jobs",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "answer": "A report summarizing the skills required for the remote Data Scientist job has been generated. You have the following skills: Python, SQL, Pandas, NumPy, Git, Machine Learning, and Statistics. However, the job listing also requires AWS, which you currently lack. The report has been saved as `job_skills_report.md`."
+  },
+  {
+    "id": "find_data_analyst",
+    "passed": false,
+    "fails": [
+      "answer has none of ['J006', 'Sample Co F']..."
+    ],
+    "steps": 4,
+    "elapsed_s": 29.4,
+    "tool_calls": [
+      "search_jobs",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "answer": "The search for Data Analyst jobs in Hyderabad returned one job listing. The comparison of the required skills for this job with your resume shows that you have all the necessary skills: Python, SQL, Pandas, Statistics, Power BI, and Tableau. No additional skills are required based on the job posting. A report summarizing this analysis has been saved as `data_analyst_job_skills.md`."
+  }
+]

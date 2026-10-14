@@ -1,0 +1,152 @@
+[
+  {
+    "id": "count_ai_hyd",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 11.8,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": "Found 2 job(s).\nJOB_ID - Title - Company - Location\nJ001 - AI Engineer - Sample Co A - Hyderabad\nJ003 - Junior AI Engineer - Sample Co C - Hyderabad\n\nThere are 2 AI Engineer jobs listed in Hyderabad."
+  },
+  {
+    "id": "remote_ds",
+    "passed": false,
+    "fails": [
+      "answer has none of ['J009', 'Junior Data Scientist']..."
+    ],
+    "steps": 2,
+    "elapsed_s": 7.9,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": ""
+  },
+  {
+    "id": "find_data_analyst",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 12.3,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": "Found 1 job(s). JOB_ID - Title - Company - Location J006 - Data Analyst - Sample Co F - Hyderabad\n\nThis search returned one job listing for a Data Analyst position at Sample Co F in Hyderabad. The job may present specific skill requirements which we can compare against your resume to identify potential gaps and overlaps."
+  },
+  {
+    "id": "skills_j001",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 8.9,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "answer": "The job J001 requires the following skills: python, fastapi, docker, aws, ci/cd, rag, llm, vector database, prompt engineering."
+  },
+  {
+    "id": "skills_j007",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 9.4,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "answer": "The job J007 requires the following skills: python, pytorch, tensorflow, docker, kubernetes, gcp, mlops, deep learning, nlp, and computer vision."
+  },
+  {
+    "id": "compare_two",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 16.5,
+    "tool_calls": [
+      "compare_to_resume"
+    ],
+    "answer": "You have the following skills that are required by both jobs J002 and J007: Python, PyTorch, SQL, scikit-learn, Git, Machine Learning, TensorFlow, Deep Learning, and Computer Vision. However, there are skills that the jobs are looking for which you currently lack: Docker, MLOps, Airflow, Kubernetes, GCP, and NLP."
+  },
+  {
+    "id": "gaps_pune_ai",
+    "passed": false,
+    "fails": [
+      "expected tool order ['search_jobs', 'compare_to_resume'], got ['search_jobs']",
+      "answer missing 'kubernetes'"
+    ],
+    "steps": 2,
+    "elapsed_s": 8.3,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": ""
+  },
+  {
+    "id": "pipeline_hyd",
+    "passed": true,
+    "fails": [],
+    "steps": 4,
+    "elapsed_s": 33.4,
+    "tool_calls": [
+      "search_jobs",
+      "compare_to_resume",
+      "save_report"
+    ],
+    "answer": "Found 2 job(s).\nJOB_ID - Title - Company - Location\nJ001 - AI Engineer - Sample Co A - Hyderabad\nJ003 - Junior AI Engineer - Sample Co C - Hyderabad\n\nThe report highlights that you have skills in Python, RAG, LLM, and Git. However, there are gaps in your skill set for FastAPI, Docker, AWS, CI/CD, vector database, prompt engineering, Azure, and Langchain. These are the skills most frequently requested in the AI Engineer roles in Hyderabad."
+  },
+  {
+    "id": "pipeline_ml_blr",
+    "passed": false,
+    "fails": [
+      "expected tool order ['search_jobs', 'compare_to_resume', 'save_report'], got ['search_jobs']",
+      "answer missing 'docker'",
+      "report ml_blr_gap.md was not saved"
+    ],
+    "steps": 2,
+    "elapsed_s": 8.7,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": ""
+  },
+  {
+    "id": "no_results",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 7.4,
+    "tool_calls": [
+      "search_jobs"
+    ],
+    "answer": "Found 0 job(s).\n\nThere are currently no Quantum Engineer jobs listed in Hyderabad."
+  },
+  {
+    "id": "unknown_job",
+    "passed": true,
+    "fails": [],
+    "steps": 2,
+    "elapsed_s": 7.1,
+    "tool_calls": [
+      "extract_skills"
+    ],
+    "answer": "Job ID J999 was not found. Please provide a valid job ID."
+  },
+  {
+    "id": "no_tools_weather",
+    "passed": true,
+    "fails": [],
+    "steps": 1,
+    "elapsed_s": 5.8,
+    "tool_calls": [],
+    "answer": "I'm sorry, but I can't provide weather information as my capabilities are focused on job market analysis. Please check a weather forecasting website or app for today's weather in Hyderabad."
+  },
+  {
+    "id": "no_tools_chat",
+    "passed": true,
+    "fails": [],
+    "steps": 1,
+    "elapsed_s": 4.6,
+    "tool_calls": [],
+    "answer": "RAG stands for Retrieval-Augmented Generation, a technique where models use external information sources to enhance their responses."
+  }
+]
